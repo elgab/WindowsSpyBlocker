@@ -1,8 +1,20 @@
-DNS/IP block rules using dnsmasq/iptables, focused on latest OpenWrt release (Chaos Calmer 15.05.1).
-opt-in approach: all 3 segments of hosts and IP ranges included, comment what you really need e.g: updates.
+DNS/IP block rules using dnsmasq/iptables for OpenWrt (Chaos Calmer 15.05.1) targeting Win10, Win8.1, Win7.
+Winall & opt-in approach: all 3 segments of hosts and IP ranges from the 3 operating systems included, comment what you really need e.g: updates.
 
 Requires package "iptables-mod-nat-extra" for port 53 (DNS) redirect rule from dnsmasq.conf
-dnsmasq.conf is bypassed if you use dnscrypt on client machine (recommended) so use hosts before dnscrypt exit point.
+dnsmasq.conf is used to protect fresh installs and as fallback protection for dnscrypt proxy.
+After installing dnscrypt proxy on client PC (recommended), dnsmasq.conf is bypassed so use appropriate hosts again before encrypted exit node.
 
 dnscrypt is also available in openwrt repo, but may be slow and CPU hungry on average routers,
 stay with the PC client as recommended.
+
+Installation:
+- connect to the box with something like WinSCP
+- copy firewall.user dnsmasq.conf in /etc
+- chmod 644 && chown 0:0 both files
+- reboot router.
+
+TODO priorities:
+-automate IP ranges to CIDR
+-automate hosts for dnsmasq using sed
+-use cron to fetch files from web.
