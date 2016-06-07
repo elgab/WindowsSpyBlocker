@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.1 (2016/06/07)
+
+* Add Windows 7 and Windows 8.1 hosts and firewall rules (Issue #1)
+* Add Wireshark script to extract log and generate CSV (Issue #6)
+* Bug spy rule blocking Windows update (Issue #14)
+* Add diff script to compare current firewall rules / hosts with generated CSVs
+* New hosts and firewall rules
+
+## 3.0 (2016/06/03)
+
+* Add Sysmon, Proxifier, Wireshark capture method in the [Wiki](../../wiki) (Issue #11)
+* Enhancement for firewall script (Issue #2)
+* Separate rules and scripts in distinct folders
+* New hosts and firewall rules
+* Add capture logs in CSV files
+* Add Sysmon script (install / uninstall / extract event log)
+* Add Proxifier script (extract log)
+
 ## 2.7 (2016/05/27)
 
 * Add NCSI alternative probe (Issue #9)
